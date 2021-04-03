@@ -1,15 +1,19 @@
 ---
 title: "simpleRegress"
-author: "put your name here"
-date: "Fall 2020"
-output: html_document
+author: "Tania Boror"
+date: "4/3/2021"
+output: 
+    html_document:
+      toc: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## make a simple regression model
+## Bears Regression Model
+
+### make a simple regression model - read in the data
 
 ```{r}
 bears <- read.csv(file="BEARS.csv",header = TRUE)
