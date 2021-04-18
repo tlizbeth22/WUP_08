@@ -32,7 +32,7 @@ summary.lm(simp)
 
 
 ```{r}
-newData <- data.frame(NECK=bears$NECK[c(5,15,23)])
+newData <- data.frame(NECK=bears$NECK[c(17,22,26)])
 predict(simp,newData)
 predict(simp,newData,se.fit=TRUE)
 ```
@@ -47,6 +47,21 @@ headWid <- lm(LENGTH~HEADWTH,data=bears)
 plot(LENGTH~HEADWTH,data=bears)
 abline(headWid)
 summary.lm(headWid)
+```
+
+# HEADLENGTH
+## Model LENGTH ~ HEADLEN
+
+```{r}
+simpHL <- lm(LENGTH~HEADLEN,data=bears)
+plot(LENGTH~HEADLEN,data=bears)
+abline(simpHL)
+summary.lm(simpHL)
+```
+
+```{r}
+new <- data.frame(HEADLEN=bears$HEADLEN [c(5, 15, 23)])
+predict(simpHL,new,se.fit=TRUE)
 ```
 
 # WEIGHT
@@ -78,3 +93,16 @@ summary.lm(simpCT)
 new <- data.frame(CHEST=bears$CHEST [c(5, 15, 23)])
 predict(simpCT,new,se.fit=TRUE)
 ```
+
+# CONCLUSIONS
+
+The best model is Length ~ HEADLEN as seen by the adjusted R-Squared the prediction of the length for bears 5, 15, and 23. These were:
+
+70.31,  51.94, 58.83
+
+
+The actual lengths of the bears were
+
+`r bears$LENGTH[c(5, 15, 23)]` 
+
+The error in prediction for bear number 5 was about 8 inches, for bear number 15, the prediction is right on, and for bear number 23, the error in the prediction was just under 6 inches.
