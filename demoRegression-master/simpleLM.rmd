@@ -32,12 +32,15 @@ summary.lm(simp)
 
 
 ```{r}
-newData <- data.frame(NECK=c(17,22,26))
+newData <- data.frame(NECK=bears$NECK[c(5,15,23)])
 predict(simp,newData)
 predict(simp,newData,se.fit=TRUE)
 ```
 ## Surely there is another variable that can better predict LENGTH than NECK. Find one and compare its performance to that of neck by it value of Adjusted-Rsquared (bigger is better).
 
+
+# HEADWIDTH
+## Model LENGTH ~ HEADWTH
 
 ```{r}
 headWid <- lm(LENGTH~HEADWTH,data=bears)
@@ -46,4 +49,4 @@ abline(headWid)
 summary.lm(headWid)
 ```
 
-Do not use headwth.
+
