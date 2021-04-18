@@ -49,4 +49,17 @@ abline(headWid)
 summary.lm(headWid)
 ```
 
+# WEIGHT
+## Model LENGTH ~ WEIGHT
 
+```{r}
+simpWT <- lm(LENGTH~WEIGHT,data=bears)
+plot(LENGTH~WEIGHT,data=bears)
+abline(simpWT)
+summary.lm(simpWT)
+```
+
+```{r}
+new <- data.frame(WEIGHT=bears$WEIGHT [c(5, 15, 23)])
+predict(simpWT,new,se.fit=TRUE)
+```
