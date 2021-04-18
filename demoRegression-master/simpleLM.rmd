@@ -63,3 +63,18 @@ summary.lm(simpWT)
 new <- data.frame(WEIGHT=bears$WEIGHT [c(5, 15, 23)])
 predict(simpWT,new,se.fit=TRUE)
 ```
+
+# CHEST
+##  Model LENGTH ~ CHEST
+
+```{r}
+simpCT <- lm(LENGTH~CHEST,data=bears)
+plot(LENGTH~CHEST,data=bears)
+abline(simpCT)
+summary.lm(simpCT)
+```
+
+```{r}
+new <- data.frame(CHEST=bears$CHEST [c(5, 15, 23)])
+predict(simpCT,new,se.fit=TRUE)
+```
