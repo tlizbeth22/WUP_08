@@ -65,6 +65,7 @@ predict(simpHL,new,se.fit=TRUE)
 ```
 
 # WEIGHT
+
 ## Model LENGTH ~ WEIGHT
 
 ```{r}
